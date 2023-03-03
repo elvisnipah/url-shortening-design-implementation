@@ -2,12 +2,14 @@ import illustrationWorking from "../assets/illustration-working.svg";
 
 function Hero() {
   return (
-    <section className="flex flex-col py-4 overflow-hidden">
-      <div className="pl-8 mr-[-40%]">
-        <img src={illustrationWorking} alt="" className="" />
+    <section className="flex flex-col pb-24">
+      <div className="overflow-hidden">
+        <div className="pl-8 mr-[-40%]">
+          <img src={illustrationWorking} alt="" className="" />
+        </div>
       </div>
-      <section className="my-10 flex flex-col items-center">
-        <h2 className="font-bold text-5xl text-center">
+      <section className="py-10 flex flex-col items-center">
+        <h2 className="font-bold text-4xl text-center">
           More than just shorter links
         </h2>
         <p className="text-gray-400 text-center px-10 py-5 text-lg">
