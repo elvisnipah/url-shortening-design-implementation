@@ -8,7 +8,7 @@ function Hero() {
           <img src={illustrationWorking} alt="" className="" />
         </div>
       </div>
-      <section className="py-10 flex flex-col items-center">
+      <section className="py-10 p-4 flex flex-col items-center">
         <h2 className="font-bold text-4xl text-center">
           More than just shorter links
         </h2>
