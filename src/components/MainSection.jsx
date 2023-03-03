@@ -1,17 +1,18 @@
 import React from "react";
 
-import shortenBg from "../assets/bg-shorten-mobile.svg";
+import shortenBgMobile from "../assets/bg-shorten-mobile.svg";
+import boostBgMobile from "../assets/bg-boost-mobile.svg";
 import recognitionIcon from "../assets/icon-brand-recognition.svg";
 import detailedIcon from "../assets/icon-detailed-records.svg";
 import customizeIcon from "../assets/icon-fully-customizable.svg";
 
 function MainSection() {
   return (
-    <section className="bg-gray-200 flex flex-col items-center pb-16">
+    <section className="bg-gray-200 flex flex-col items-center">
       <div
         className="p-4 flex flex-col gap-4 items-center w-[90%] bg-[hsl(257,26%,26%)] rounded-lg mt-[-70px]"
         style={{
-          backgroundImage: `url(${shortenBg})`,
+          backgroundImage: `url(${shortenBgMobile})`,
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           backgroundPositionX: "50px",
@@ -66,6 +67,22 @@ function MainSection() {
             customizable links, supercharging audience engagement.
           </p>
         </article>
+      </section>
+
+      <section
+        className="mt-16 w-full py-16 flex flex-col gap-3 items-center bg-[hsl(257,26%,26%)]"
+        style={{
+          backgroundImage: `url(${boostBgMobile})`,
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          // backgroundPositionX: "50px",
+          // backgroundPositionY: "150%",
+        }}
+      >
+        <p className="font-bold text-xl text-white">Boost your links today</p>
+        <button className="text-white font-bold bg-[hsl(180,66%,49%)] px-6 py-3 rounded-3xl">
+          Get Started
+        </button>
       </section>
     </section>
   );
