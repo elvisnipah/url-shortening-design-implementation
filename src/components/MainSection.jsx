@@ -1,33 +1,15 @@
 import React from "react";
 
-import shortenBgMobile from "../assets/bg-shorten-mobile.svg";
 import boostBgMobile from "../assets/bg-boost-mobile.svg";
 import recognitionIcon from "../assets/icon-brand-recognition.svg";
 import detailedIcon from "../assets/icon-detailed-records.svg";
 import customizeIcon from "../assets/icon-fully-customizable.svg";
+import URLSection from "./url-section/URLSection";
 
 function MainSection() {
   return (
     <section className="bg-gray-200 flex flex-col items-center">
-      <div
-        className="p-4 flex flex-col gap-4 items-center w-[90%] bg-[hsl(257,26%,26%)] rounded-lg mt-[-70px]"
-        style={{
-          backgroundImage: `url(${shortenBgMobile})`,
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          backgroundPositionX: "50px",
-          backgroundPositionY: "150%",
-        }}
-      >
-        <input
-          type="text"
-          className="w-[90%] max-w-[400px] rounded p-2 px-4"
-          placeholder="Shorten a link here..."
-        />
-        <button className="bg-[hsl(180,66%,49%)] text-white text-lg font-bold px-9 py-2 rounded w-[90%] max-w-[400px]">
-          Shorten It!
-        </button>
-      </div>
+      <URLSection />
 
       <h3 className="pt-16 font-bold text-2xl mb-5">Advanced Statistics</h3>
       <p className="text-center px-8 text-gray-400">
@@ -75,8 +57,6 @@ function MainSection() {
           backgroundImage: `url(${boostBgMobile})`,
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
-          // backgroundPositionX: "50px",
-          // backgroundPositionY: "150%",
         }}
       >
         <p className="font-bold text-xl text-white">Boost your links today</p>
