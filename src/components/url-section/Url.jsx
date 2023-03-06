@@ -28,7 +28,7 @@ function Url({ link }) {
         {link.link}
       </a>
       <button
-        className={`font-bold rounded-lg w-full py-2  text-white self-center ${
+        className={`font-bold rounded-lg w-full py-2 hover:opacity-50  text-white self-center ${
           copyClicked ? "bg-[hsl(257,26%,26%)]" : "bg-[hsl(180,66%,49%)]"
         }`}
         onClick={handleClick}

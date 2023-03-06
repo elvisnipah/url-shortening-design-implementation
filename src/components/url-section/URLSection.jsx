@@ -2,10 +2,11 @@ import React from "react";
 import { useState } from "react";
 
 import shortenBgMobile from "../../assets/bg-shorten-mobile.svg";
+import shortenBgDesktop from "../../assets/bg-shorten-desktop.svg";
 
 import Url from "./Url";
 
-function URLSection() {
+function URLSection(props) {
   const [enteredURL, setEnteredURL] = useState("");
 
   const [error, setError] = useState("");
@@ -21,8 +22,10 @@ function URLSection() {
   const checkError = () => {
     if (enteredURL.length === 0) {
       setError("Please add a link");
+      return true;
     } else {
       setError("");
+      return false;
     }
   };
 
@@ -60,19 +63,21 @@ function URLSection() {
   });
 
   return (
-    <section className="w-[90%] mt-[-70px] z-20 flex flex-col gap-6">
+    <section className="w-[90%] mt-[-70px] z-20 flex flex-col gap-6 lg:mt-[-60px]">
       <form
         onSubmit={handleSubmit}
-        className="p-4 flex flex-col gap-4 items-center bg-[hsl(257,26%,26%)] rounded-lg "
+        className="p-4 flex flex-col gap-4 items-center bg-[hsl(257,26%,26%)] rounded-lg lg:flex-row lg:p-8"
         style={{
-          backgroundImage: `url(${shortenBgMobile})`,
+          backgroundImage: `url(${
+            props.windowSize < 1024 ? shortenBgMobile : shortenBgDesktop
+          })`,
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
-          backgroundPositionX: "50px",
-          backgroundPositionY: "150%",
+          backgroundPositionX: `${props.windowSize < 1024 ? "50px" : "0px"}`,
+          backgroundPositionY: `${props.windowSize < 1024 ? "150%" : "0px"}`,
         }}
       >
-        <section className="w-[90%] max-w-[400px]">
+        <section className="w-[90%] max-w-[400px] lg:max-w-none">
           <input
             type="text"
             className={`w-full rounded p-2 px-4 border-2 ${
@@ -88,9 +93,11 @@ function URLSection() {
           />
           {error && <p className="text-red-400 text-xs pt-1 italic">{error}</p>}
         </section>
-        <button className="bg-[hsl(180,66%,49%)] text-white text-lg font-bold px-9 py-2 rounded w-[90%] max-w-[400px]">
-          Shorten It!
-        </button>
+        <div className="bg-white w-[90%] max-w-[400px] lg:w-[200px] rounded-xl">
+          <button className="bg-[hsl(180,66%,49%)] text-white text-lg rounded-xl font-bold w-full py-2 hover:opacity-50">
+            Shorten It!
+          </button>
+        </div>
       </form>
       {links && displayLinks}
     </section>
